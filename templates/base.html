@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+   <header class="header">
+      <h1 class="header">Nutrient Calculator</h1>
+      <nav class="nav">
+        <ul>
+          <li><a href="{% url 'nutrition:index'%}">List</a></li>
+          <li><a href="{% url 'nutrition:create'%}">Create</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="allWrapper">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+    </div>
+    <footer>
+      <div class="container">
+	  <p>&copy; 2023 sigma7641. All Rights Reserved.</p>
+      </div>
+      <div class="container">
+          <p class="sentences">
+            サイト上のコンテンツの無断転載・複製を禁じます。
+            このサイトに掲載されている全ての文章・画像・音声などの著作物は、著作権法によって保護されています。
+            当サイトは、リンク先で起こったトラブルについて一切責任を負いません。
+          </p>
+      </div>
+    </footer>
+</html>

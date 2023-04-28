@@ -1,0 +1,33 @@
+{% extends 'nutrition/base_nutrition.html' %}
+
+{% block content %}
+<h1>Nutrients</h1>
+<table>
+  <thead>
+    <tr>
+      <th>食材名</th>
+      <th>カロリー</th>
+      <th>タンパク質</th>
+      <th>脂質</th>
+      <th>炭水化物</th>
+      <th>アクション</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for nutrient in nutrients %}
+    <tr>
+      <td>{{ nutrient.name }}</td>
+      <td>{{ nutrient.calories }}</td>
+      <td>{{ nutrient.protein }}</td>
+      <td>{{ nutrient.fat }}</td>
+      <td>{{ nutrient.carbohydrate }}</td>
+      <td>
+	<a href="{% url 'nutrition:detail' nutrient.pk %}">Detail</a>
+	<a href="{% url 'nutrition:update' nutrient.pk %}">Update</a>
+	<a href="{% url 'nutrition:delete' nutrient.pk %}">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
