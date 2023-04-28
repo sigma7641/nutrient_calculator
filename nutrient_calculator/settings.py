@@ -86,12 +86,12 @@ WSGI_APPLICATION = 'nutrient_calculator.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django-db',
-        'USER': 'django',
-        'PASSWORD': 'django',
-        'HOST': 'db',
-        'PORT': '3306'
+        'ENGINE': '【自分の設定を入れてください】',
+        'NAME': '【自分の設定を入れてください】',
+        'USER': '【自分の設定を入れてください】',
+        'PASSWORD': '【自分の設定を入れてください】',
+        'HOST': '【自分の設定を入れてください】',
+        'PORT': '【自分の設定を入れてください】'
     }
 }
 
