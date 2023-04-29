@@ -1,0 +1,30 @@
+{% extends 'registration/base_registration.html' %}
+
+{% block content %}
+  <h2>グループ一覧</h2>
+   <table class="table">
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>説明</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for group in groups %}
+        <tr>
+          <td>{{ group.name }}</td>
+          <td>{{ group.description }}</td>
+          <td>
+            <a href="{% url 'user:delete_group' group.id %}" class="btn btn-danger btn-sm">削除</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">グループはありません。</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+

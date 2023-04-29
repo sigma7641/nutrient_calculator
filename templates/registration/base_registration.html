@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css%}
+    <link rel="stylesheet" href="{% static 'nutrition_style.css' %}">
+    <link rel="stylesheet" href="{% static 'user_style.css' %}">
+{% endblock %}
+{% block page-tab%}
+	<div class=page-tab>
+	<nav class="nav">
+	  <ul>
+	    <li><a href="{% url 'user:create_group'%}">Create Group</a></li>
+	    <li><a href="{% url 'user:register'%}">Register</a></li>
+	    <li><a href="{% url 'user:group_list'%}">Group List</a></li>
+	  </ul>
+	</nav>
+	</div>
+{% endblock %}
+
+{% block content %} {% endblock %}

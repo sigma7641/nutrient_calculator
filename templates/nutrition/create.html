@@ -1,0 +1,30 @@
+{% extends 'nutrition/base_nutrition.html' %}
+
+{% block content %}
+
+  <h1>Create Nutrient</h1>
+  <table>
+	{% if field.name == 'member' %}
+	    <div class="form-group">
+	        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+	        {% for choice in field %}
+	            <div class="form-check">
+	                {{ choice.tag }}
+	                {{ choice.choice_label }}
+	            </div>
+	        {% endfor %}
+	    </div>
+	{% else %}
+	    <div class="form-group">
+	        {{ field.label_tag }}
+	        {{ field }}
+	        {% if field.help_text %}
+	            <small class="form-text text-muted">{{ field.help_text }}</small>
+	        {% endif %}
+	        {% for error in field.errors %}
+	            <div class="invalid-feedback">{{ error }}</div>
+	        {% endfor %}
+	    </div>
+	{% endif %}
+  </table>
+{% endblock %}

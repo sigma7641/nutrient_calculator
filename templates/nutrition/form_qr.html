@@ -1,0 +1,45 @@
+{% extends 'nutrition/base_nutrition.html' %}
+
+{% block content %}
+
+  <h1>Create Nutrient</h1>
+  <table class="excel-like">
+    <form method="post">
+      {% csrf_token %}
+      <tr>
+        <th><label for="{{ form.name.id_for_label }}">食材名</label></th>
+        <td>{{ form.name }}</td>
+      </tr>
+      <!--
+      <tr>
+        <th><label for="{{ form.calories.id_for_label }}">カロリー</label></th>
+        <td>{{ form.calories }}</td>
+      </tr>
+      -->
+      <tr>
+        <th><label for="{{ form.protein.id_for_label }}">タンパク質</label></th>
+        <td>{{ form.protein }}</td>
+      </tr>
+      <tr>
+        <th><label for="{{ form.fat.id_for_label }}">脂質</label></th>
+        <td>{{ form.fat }}</td>
+      </tr>
+      <tr>
+        <th><label for="{{ form.carbohydrate.id_for_label }}">炭水化物</label></th>
+        <td>{{ form.carbohydrate }}</td>
+      </tr>
+      <tr>
+        <th><label for="{{ form.price.id_for_label }}">値段</label></th>
+        <td>{{ form.price }}</td>
+      </tr>
+      <tr>
+        <th><label for="{{ form.ratio.id_for_label }}">比率(%)</label></th>
+        <td>{{ form.ratio }}</td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="submit" class="btn btn-primary">Save</button></td>
+      </tr>
+    </form>
+  </table>
+{% endblock %}
+

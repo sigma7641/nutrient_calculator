@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>{% block title %}{% endblock %}</title>
+    {% block css%}{% endblock %}
+  </head>
+  <body>
+	<header class="header">
+	    <h1 class="header">Nutrient Calculator</h1>
+	    <div class="page-tab">
+		<nav class="nav">
+		  <ul>
+		    <li><a href="{% url 'nutrition:index'%}">Nutrition</a></li>
+	    	    <li><a href="{% url 'user:group_list'%}">Group</a></li>
+		  </ul>
+		</nav>
+	    </div>
+	  <div class="header-inner">
+    	{% block page-tab%}{% endblock %}
+	    <div class="login-info">
+	      {% if user.is_authenticated %}
+	        <p>{{ user.username }}</p>
+		<div class="logout">
+  		  <form action="{% url 'logout' %}" method="post">
+  		    {% csrf_token %}
+  		    <button type="submit" class="header-button">ログアウト</button>
+  		  </form>
+  		</div>
+	      {% else %}
+	        <p>ログインしていません。</p>
+	      {% endif %}
+	    </div>
+	  </div>
+	</header>
+    <div class="allWrapper">
+    <div class="container">
+    	{% if messages %}
+	  {% for message in messages %}
+	    <div class="alert alert-{{ message.tags }}">
+	      {{ message }}
+	    </div>
+	  {% endfor %}
+	{% endif %}
+      {% block content %}{% endblock %}
+    </div>
+    </div>
+    <footer>
+      <div class="container">
+	  <p>&copy; 2023 sigma7641. All Rights Reserved.</p>
+      </div>
+      <div class="container">
+          <p class="sentences">
+            サイト上のコンテンツの無断転載・複製を禁じます。
+            このサイトに掲載されている全ての文章・画像・音声などの著作物は、著作権法によって保護されています。
+            当サイトは、リンク先で起こったトラブルについて一切責任を負いません。
+          </p>
+      </div>
+    </footer>
+</html>

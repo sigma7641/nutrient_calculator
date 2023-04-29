@@ -1,0 +1,68 @@
+{% extends 'nutrition/base_nutrition.html' %}
+
+{% block content %}
+<h1>Aggregate by Date Range</h1>
+<div class="allign-dateform">
+   <form method="POST">
+     <div class="row">
+	<div class="col">
+     	{% csrf_token %}
+	  {{ form.start_date }}
+	  {{ form.end_date }} 
+	  <button type="submit" class="dateSubmitButton">Submit</button>
+	</div>
+     </div>
+   </form>
+</div>
+  <h2>Total</h2>
+<table>
+  <thead>
+    <tr>
+      <th>食材名</th>
+      <th>カロリー</th>
+      <th>タンパク質</th>
+      <th>脂質</th>
+      <th>炭水化物</th>
+      <th>値段(円)</th>
+      <th>日付</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for nutrient in nutrients %}
+    <tr>
+      <td>{{ nutrient.name }}</td>
+      <td>{{ nutrient.calories }}</td>
+      <td>{{ nutrient.protein }}</td>
+      <td>{{ nutrient.fat }}</td>
+      <td>{{ nutrient.carbohydrate }}</td>
+      <td>{{ nutrient.price }}</td>
+      <td>{{ nutrient.created_at }}</td>
+      {% empty %}
+          <td colspan="9">No nutrients found.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+  <table>
+    <tr>
+      <th >カロリー:</th>
+      <td>{{ total.calories }}</td>
+    </tr>
+    <tr>
+      <th>タンパク質:</th>
+      <td>{{ total.protein }}</td>
+    </tr>
+    <tr>
+      <th>炭水化物:</th>
+      <td>{{ total.carbohydrate }}</td>
+    </tr>
+    <tr>
+      <th>脂質:</th>
+      <td>{{ total.fat }}</td>
+    </tr>
+    <tr>
+      <th>値段:</th>
+      <td>{{ total.price }}</td>
+    </tr>
+  </table>
+{% endblock %}

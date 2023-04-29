@@ -1,0 +1,37 @@
+{% extends 'nutrition/base_nutrition.html' %}
+
+{% block content %}
+<h1>Nutrients</h1>
+<table>
+  <thead>
+    <tr>
+      <th class="main">FN</th>
+      <th class="sub">CAL</th>
+      <th class="sub">PRO</th>
+      <th class="sub">FAT</th>
+      <th class="sub">CARB</th>
+      <th class="sub">PRICE</th>
+      <th class="sub">DATE</th>
+      <th class="sub">ACT</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for nutrient in nutrients %}
+    <tr>
+      <td class="main">{{ nutrient.name }}</td>
+      <td class="sub">{{ nutrient.calories }} cal</td>
+      <td class="sub">{{ nutrient.protein }} g</td>
+      <td class="sub">{{ nutrient.fat }} g</td>
+      <td class="sub">{{ nutrient.carbohydrate }} g</td>
+      <td class="sub">¥ {{ nutrient.price }}</td>
+      <td class="sub">{{ nutrient.created_at|date:"y/m/d" }}</td>
+      <td class="sub">
+	<a href="{% url 'nutrition:detail' nutrient.pk %}">詳細</a>
+	<a href="{% url 'nutrition:update' nutrient.pk %}">更新</a>
+	<a href="{% url 'nutrition:delete' nutrient.pk %}">削除</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'registration/base_registration.html' %}
+
+{% block content %}
+<div class="login">
+  <div id="container">
+    <div id="header">
+      <h1><a href="#">Login</a></h1>
+    </div>
+    <div id="content">
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div id="content-main">
+          <div class="form-row">
+            <label for="id_username">Username:</label>
+            {{ form.username }}
+          </div>
+          <div class="form-row">
+            <label for="id_password">Password:</label>
+            {{ form.password }}
+          </div>
+        </div>
+        <div class="submit-row">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+      <div class="password-reset-link">
+        <a href="{% url 'password_reset' %}">Forgot your password?</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

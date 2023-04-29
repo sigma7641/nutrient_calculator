@@ -1,0 +1,693 @@
+
+/* Reset CSS */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* Global Styles */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f7f7f7;
+  margin: 0 0px;
+}
+
+a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1f5aff;
+}
+
+
+.allWrapper {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*button*/
+button[type="submit"] .dateSubmitButton {
+  background-color: #5C9291;
+  color: white;
+  padding: 0em 0em; 
+  margin: 0px 0px;
+  border: none;
+  /* border-radius: 0.2em;*/
+  cursor: pointer;
+  font-size: 1.2em;
+  box-sizing: border-box; /* widthの指定が内側のpaddingとborderを含めるようにする */
+}
+
+input[type="submit"] ,
+button[type="submit"] {
+  background-color: #5C9291;
+  color: white;
+  padding: 0.7em 1em;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+  font-size: 1.2em;
+  box-sizing: border-box; /* widthの指定が内側のpaddingとborderを含めるようにする */
+}
+
+input[type="submit"]:hover ,
+button[type="submit"]:hover {
+  background-color: #00A5BF;
+}
+
+.button {
+  background-color: #5C9291;
+  color: white;
+  padding: 0em 1em; 
+  border: none;
+  /* border-radius: 0.2em;*/
+  cursor: pointer;
+  font-size: 1.2em;
+  box-sizing: border-box; /* widthの指定が内側のpaddingとborderを含めるようにする */
+  margin: 0px 0px;
+}
+
+
+.button:hover{
+  background-color: #00A5BF;
+}
+
+/*Cantainer*/
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-tab {
+  padding:0 0;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  background-color: #A2D7DD;
+  position: relative;
+  padding: 0 25px;
+  justify-content: center;
+  margin: 10;
+  box-sizing: border-box; /* widthの指定が内側のpaddingとborderを含めるようにする */
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* 任意の幅 */
+  box-sizing: border-box; /* widthの指定が内側のpaddingとborderを含めるようにする */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header a {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+header .header-button {
+  padding: 0.6em 0.8em;
+  font-size: 0.8em;
+}
+
+.header-inner {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+ .login-info {
+    text-align: right;
+  }
+/* Navigation Styles */
+.nav {
+  background-color: #A2D7DD;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav a {
+  display: white;
+  padding: 0.1em 0.5em;
+  color: #333;
+}
+
+.nav a:hover {
+  background-color: #00A5BF;
+  color: #333;
+}
+
+/* Main Content Styles */
+.main-content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+.post h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* table Styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table td[align="right"],
+table th[align="right"] {
+  text-align: right;
+}
+
+table td[align="center"],
+table th[align="center"] {
+  text-align: center;
+}
+
+table td[nowrap],
+table th[nowrap] {
+  white-space: nowrap;
+}
+
+table td[scope="row"],
+table th[scope="row"] {
+  font-weight: bold;
+  border-left: 4px solid #007bff;
+  padding-left: 8px;
+}
+
+
+/* Footer Styles */
+footer {
+  /*position: fixed;*/
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #A2D7DD;
+  color: #fff;
+  padding: 10px 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+footer div p {
+font-size: 10px;
+color: #fff;
+margin-bottom: 5px;
+}
+
+footer div p.sentences{
+font-size: 3px;
+color: #fff;
+margin-bottom: 5px;
+}
+
+.allign-buttons {
+  display:flex;
+  align-items: center;
+  background-color: #5C9291;
+}
+
+.allign-dateform {
+  display:flex;
+  align-items: center;
+}
+
+.alert-error {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.btn-sm {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+
+/* Global Styles */
+body {
+font-family: "Helvetica Neue", Arial, sans-serif;
+font-size: 16px;
+line-height: 1.5;
+color: #333;
+background-color: #f7f7f7;
+margin: 0;
+padding: 0;
+}
+
+a {
+  text-decoration: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+body {
+font-size: 14px;
+line-height: 1.2;
+}
+
+/* Navigation Styles */
+.nav {
+  background-color: #A2D7DD;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* 列方向に配置 */
+}
+
+.nav li {
+  margin: 0px 0; /* リストアイテムのマージン追加 */
+  display: block; /* ブロックレベル要素に変更 */
+}
+
+.nav a {
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  color: #333;
+}
+
+.nav a:hover {
+  background-color: #00A5BF;
+  color: #333;
+}
+
+.allWrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* button */
+button[type="submit"].dateSubmitButton,
+input[type="submit"],
+.button {
+  background-color: #5C9291;
+  color: white;
+  padding: 1em;
+  margin: 0.5em 0;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+button[type="submit"].dateSubmitButton {
+  padding: 0;
+}
+
+button[type="submit"].dateSubmitButton:before {
+  content: "\f271";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5em;
+  padding: 0 0.5em;
+  display: inline-block;
+}
+
+button[type="submit"].dateSubmitButton span {
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+button[type="submit"].dateSubmitButton:hover {
+  background-color: #00A5BF;
+}
+
+/*Cantainer*/
+.container {
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.page-tab {
+  padding: 0 10px;
+  background-color: #A2D7DD;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  background-color: #A2D7DD;
+  position: relative;
+  padding: 0 10px; /* 変更 */
+  justify-content: center;
+  margin: 10px 0; /* 変更 */
+  box-sizing: border-box;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* 任意の幅 */
+  box-sizing: border-box;
+  font-size: 16px; /* 変更 */
+  font-weight: bold;
+  text-align: center; /* 変更 */
+}
+
+.header a {
+ display: block;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.login-info {
+  display: block; /* 変更 */
+}
+
+/* Main Content Styles */
+.main-content {
+background-color: #fff;
+border: 1px solid #ddd;
+padding: 10px;
+}
+
+.post {
+margin-bottom: 20px;
+}
+
+.post h2 {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+/* table Styles */
+table {
+border-collapse: collapse;
+width: 100%;
+white-space: nowrap;
+font-family: Arial, sans-serif;
+font-size: 12px;
+}
+
+table th,
+table td {
+padding: 6px;
+text-align: left;
+vertical-align: middle;
+border: 1px solid #ddd;
+}
+
+table th {
+background-color: #f2f2f2;
+font-weight: bold;
+text-align: center;
+vertical-align: middle;
+border: 1px solid #ddd;
+font-size: 14px;
+}
+
+table tr:nth-child(even) {
+background-color: #f9f9f9;
+}
+
+table tr:hover {
+background-color: #ddd;
+}
+
+table td[align="right"],
+table th[align="right"] {
+text-align: right;
+}
+
+table td[align="center"],
+table th[align="center"] {
+text-align: center;
+}
+
+table td[nowrap],
+table th[nowrap] {
+white-space: nowrap;
+}
+
+table td[scope="row"],
+table th[scope="row"] {
+font-weight: bold;
+border-left: 4px solid #007bff;
+padding-left: 6px;
+font-size: 14px;
+}
+
+/*Responsive*/
+@media only screen and (max-width: 768px) {
+.post h2 {
+font-size: 16px;
+}
+
+table {
+font-size: 10px;
+overflow-x: auto;
+display: block;
+width: 100%;
+}
+
+tbody,
+thead,
+tr {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+td,
+th {
+  width: 50%;
+  flex-grow: 1;
+  flex-basis: 0;
+  box-sizing: border-box;
+}
+
+table th,
+table td {
+padding: 4px;
+}
+
+table th {
+font-size: 12px;
+}
+
+table td[scope="row"],
+table th[scope="row"] {
+padding-left: 4px;
+font-size: 12px;
+}
+}
+
+/* Footer Styles */
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #A2D7DD;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: block;
+  font-size: 14px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+footer div p {
+  font-size: 10px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+footer div p.sentences{
+  font-size: 3px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.allign-buttons {
+  display:flex;
+  align-items: center;
+  background-color: #5C9291;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.allign-dateform {
+  display:flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.alert-error,
+.alert-success {
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.alert-error {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+  padding: .25rem .5rem;
+}
+
+.btn-sm {
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+  padding: .25rem .5rem;
+}
+
+}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css%}
+    <link rel="stylesheet" href="{% static 'nutrition_style.css' %}">
+{% endblock %}
+
+{% block page-tab%}
+	<div class=page-tab>
+	<nav class="nav">
+	  <ul>
+	    <li><a href="{% url 'nutrition:index'%}">List</a></li>
+	    <li><a href="{% url 'nutrition:create'%}">Create</a></li>
+	    <li><a href="{% url 'nutrition:qrcreate'%}">QR Create</a></li>
+	    <li><a href="{% url 'nutrition:aggregate'%}">Aggregate</a></li>
+	  </ul>
+	</nav>
+	</div>
+{% endblock %}
+
+{% block content %} {% endblock %}

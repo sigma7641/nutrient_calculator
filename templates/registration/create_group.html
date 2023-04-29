@@ -1,0 +1,16 @@
+{% extends 'registration/base_registration.html' %}
+
+{% block content %}
+  <h1>グループ作成</h1>
+  <form method="post" class="form" action="{% url 'user:create_group' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">グループ名：</label>
+      <input type="text" id="name" name="name" class="form-control" required>
+      <label for="description">説明：</label>
+      <input type="text" id="description" name="description" class="form-control" required>
+    </div>
+    <button type="submit">作成</button>
+  </form>
+{% endblock %}
+

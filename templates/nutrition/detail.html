@@ -1,0 +1,39 @@
+{% extends 'nutrition/base_nutrition.html' %}
+
+{% block content %}
+  <h1>Nutrient Detail</h1>
+  <table>
+    <tr>
+      <th>食材名:</th>
+      <td>{{ nutrient.name }}</td>
+    </tr>
+    <tr>
+      <th>カロリー:</th>
+      <td>{{ nutrient.calories }}</td>
+    </tr>
+    <tr>
+      <th>タンパク質:</th>
+      <td>{{ nutrient.protein }}</td>
+    </tr>
+    <tr>
+      <th>炭水化物:</th>
+      <td>{{ nutrient.carbohydrate }}</td>
+    </tr>
+    <tr>
+      <th>脂質:</th>
+      <td>{{ nutrient.fat }}</td>
+    </tr>
+    <tr>
+      <th>値段:</th>
+      <td>{{ nutrient.price }}</td>
+    </tr>
+  </table>
+  <div class="allign-buttons">
+  <p><a href="{% url 'nutrition:index' %}" class="button" >Back to index</a></p>
+  <p><a href="{% url 'nutrition:update' pk=nutrient.pk %}" class="button">Update</a></p>
+  <form action="{% url 'nutrition:delete' pk=nutrient.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+  </form>
+  </div>
+{% endblock %}
